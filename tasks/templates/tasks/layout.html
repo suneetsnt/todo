@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    {% csrf_token %}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Application</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'tasks/css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'tasks/css/site.css' %}" />
+</head>
+
+<body class="backgroundColor">
+    {% block body %}{% endblock %}
+    <script src="{% static 'tasks/js/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'tasks/js/bootstrap.js' %}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

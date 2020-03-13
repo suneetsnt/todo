@@ -1,0 +1,37 @@
+<style>
+    .footer {
+      position: fixed;
+      left: 1em;
+      bottom: 0;
+      width: 100%;
+    }
+</style>
+{% extends "tasks/layout.html" %}
+
+{% block body %}
+
+{% if user != null %}
+    <nav class="navbar navbar-expand-lg primaryColor">
+        <a style="color:white;" class="navbar-brand" href="#">Sunnet's App</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a style="color:white;" class="nav-link" href="{% url 'items' %}">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color:white;" class="nav-link" href="{% url 'user_cart' %}">My Cart</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {% endif %}
+
+    <div class="container body-content">
+        {% block content %}{% endblock %}
+        <hr />
+        
+    </div>
+    <footer class="footer">
+        <p>&copy; My Django Application</p>
+    </footer>
+{% endblock %}

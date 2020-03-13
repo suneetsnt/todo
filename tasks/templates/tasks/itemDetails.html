@@ -1,0 +1,20 @@
+{% extends "tasks/index.html" %}
+
+{% block content %}
+
+<form method="POST" style="margin-top:3em;" action="">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-3">
+            <img style="width: inherit;" src="https://www.tibs.org.tw/images/default.jpg">
+        </div>
+        <div class="col-md-9">
+            <p>{{item.name}}</p>
+            <p>{{item.description}}</p>
+            <p>{{item.price}}</p>
+            <input type="submit" class="btn btn-primary" name="BUY" value="Add to cart">
+        </div>
+    </div>
+</form>
+
+{% endblock %}

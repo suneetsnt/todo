@@ -1,0 +1,22 @@
+{% extends "tasks/index.html" %}
+
+{% block content %}
+<h3>To Do</h3>
+
+<form method="POST" action="/">
+    {% csrf_token %}
+    {{form.title}}
+    <input type="submit" value="Create task"/>
+</form>
+
+{% for task in tasks %}
+
+<div>
+    <a href="{% url 'update_task' task.id %}">Update</a>
+    <a href="{% url 'delete_task' task.id %}">Delete</a>
+    <p>{{task.title}}</p>
+</div>
+
+{% endfor %}
+
+{% endblock %}

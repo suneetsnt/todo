@@ -1,0 +1,22 @@
+{% extends "tasks/index.html" %}
+
+{% block content %}
+
+<div class="row">
+    {% for i in items %}
+    
+    <div class="col-xs-6 col-md-4">
+        <div class="card" style="width: 18rem;margin:3em;">
+            <img src="https://www.tibs.org.tw/images/default.jpg" class="card-img-top">
+            <div class="card-body secondaryColor">
+              <h5 class="card-title">{{i.name}}</h5>
+              <p class="card-text">&euro; {{i.price}} </p>
+              <a href="{% url 'itemInfo' i.id %}" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}

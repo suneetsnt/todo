@@ -1,0 +1,27 @@
+{% extends "tasks/layout.html" %}
+
+{% block body %}
+
+<form  style="text-align: -webkit-center;margin-top: 4em;"method="POST" action="">
+    {% csrf_token %}
+    <div class="card" style="width: 35%;;">
+        <div class="card-body text-center">
+            <div class="form-group">
+                <label for="username"><b>Username</b></label>
+                <input class="form-control" type="text" placeholder="Enter Username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password"><b>Password</b></label>
+                <input class="form-control" type="password" placeholder="Enter Password" name="password1" required>
+            </div>
+            <div class="form-group">
+                <label for="password"><b>Confirm Password</b></label>
+                <input class="form-control" type="password" placeholder="Enter Password" name="password2" required>
+            </div>
+            <input type="submit" class="btn btn-primary" value="register"/>
+            <br/>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
